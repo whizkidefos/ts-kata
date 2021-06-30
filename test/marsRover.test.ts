@@ -34,6 +34,14 @@ describe("MarsRover", () => {
       expect(coordinates).toEqual("0:3:N");
    });
 
+   it("should return the coordinate 0:0:E if given R", () => {
+      const marsRover = new MarsRover();
+
+      const coordinates = marsRover.execute("R");
+
+      expect(coordinates).toEqual("0:0:E");
+   });
+
    // it("should return the coordinate 2:0:E if given MMR", () => {
    //    const marsRover = new MarsRover();
    //
