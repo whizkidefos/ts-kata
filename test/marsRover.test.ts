@@ -1,8 +1,4 @@
-class MarsRover {
-   execute(command: string) {
-
-   }
-}
+import MarsRover from '../src/marsRover';
 
 describe("MarsRover", () => {
    it("should start at location 0:0:N", () => {
