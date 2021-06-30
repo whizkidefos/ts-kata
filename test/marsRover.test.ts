@@ -42,12 +42,12 @@ describe("MarsRover", () => {
       expect(coordinates).toEqual("0:0:E");
    });
 
-   // it("should return the coordinate 2:0:E if given MMR", () => {
-   //    const marsRover = new MarsRover();
-   //
-   //    const coordinates = marsRover.execute("MMR");
-   //
-   //    expect(coordinates).toEqual("2:0:E");
-   // });
+   it("should return the coordinate 0:0:S if given RR", () => {
+      const marsRover = new MarsRover();
+
+      const coordinates = marsRover.execute("RR");
+
+      expect(coordinates).toEqual("0:0:S");
+   });
 });
 
