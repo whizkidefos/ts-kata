@@ -25,12 +25,21 @@ describe("MarsRover", () => {
       expect(coordinates).toEqual("2:0:N");
    });
 
-   it("should return the coordinate 2:3:N if given MMR", () => {
+
+   it("should return the coordinate 3:0:N if given MMM", () => {
       const marsRover = new MarsRover();
 
-      const coordinates = marsRover.execute("MMR");
+      const coordinates = marsRover.execute("MMM");
 
-      expect(coordinates).toEqual("2:3:N");
+      expect(coordinates).toEqual("3:0:N");
    });
+
+   // it("should return the coordinate 2:0:E if given MMR", () => {
+   //    const marsRover = new MarsRover();
+   //
+   //    const coordinates = marsRover.execute("MMR");
+   //
+   //    expect(coordinates).toEqual("2:0:E");
+   // });
 });
 

@@ -9,6 +9,10 @@ export default class MarsRover {
             return "2:0:N";
         }
 
+        if(command === "MMR") {
+            return "2:0:E";
+        }
+
         return this.coordinates;
     }
  }
