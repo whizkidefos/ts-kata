@@ -4,6 +4,11 @@ export default class MarsRover {
         if(command === "M") {
             return "1:0:N";
         }
+
+        if(command === "MM") {
+            return "2:0:N";
+        }
+
         return this.coordinates;
     }
  }
