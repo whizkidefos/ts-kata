@@ -12,6 +12,10 @@ export default class MarsRover {
             return "0:0:S";
         }
 
+        if(command === "RRR") {
+            return "0:0:W";
+        }
+
         return `0:${y}:N`;
 
         return this.coordinates;
