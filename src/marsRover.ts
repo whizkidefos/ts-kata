@@ -15,39 +15,43 @@ export default class MarsRover {
         const y = command.length;
 
         if(command === ROTATE_RIGHT) {
-            return this.x_and_y + EAST;
+            return this.getOutputString(EAST);
         }
 
         if(command === ROTATE_RIGHT+ROTATE_RIGHT) {
-            return this.x_and_y + SOUTH;
+            return this.getOutputString(SOUTH);
         }
 
         if(command === ROTATE_RIGHT+ROTATE_RIGHT+ROTATE_RIGHT) {
-            return this.x_and_y + WEST;
+            return this.getOutputString(WEST);
         }
 
         if(command === ROTATE_RIGHT+ROTATE_RIGHT+ROTATE_RIGHT+ROTATE_RIGHT) {
-            return this.x_and_y + NORTH;
+            return this.getOutputString(NORTH);
         }
 
         if(command === ROTATE_LEFT) {
-            return this.x_and_y + WEST;
+            return this.getOutputString(WEST);
         }
 
         if(command === ROTATE_LEFT + ROTATE_LEFT) {
-            return this.x_and_y + SOUTH;
+            return this.getOutputString(SOUTH);
         }
 
         if(command === ROTATE_LEFT + ROTATE_LEFT + ROTATE_LEFT) {
-            return this.x_and_y + EAST;
+            return this.getOutputString(EAST);
         }
 
         if(command === ROTATE_LEFT + ROTATE_LEFT + ROTATE_LEFT + ROTATE_LEFT) {
-            return this.x_and_y + NORTH;
+            return this.getOutputString(NORTH);
         }
 
         return `0:${y}:N`;
 
         return this.coordinates;
     }
- }
+
+    private getOutputString(direction: string) {
+        return this.x_and_y + direction;
+    }
+}
