@@ -11,6 +11,10 @@ const rotateRightTwice = ROTATE_RIGHT+ROTATE_RIGHT;
 const rotateRightThrice = ROTATE_RIGHT+ROTATE_RIGHT+ROTATE_RIGHT;
 const rotateRightFourTimes = ROTATE_RIGHT+ROTATE_RIGHT+ROTATE_RIGHT+ROTATE_RIGHT;
 
+const rotateLeft = ROTATE_LEFT;
+const rotateLeftTwice = ROTATE_LEFT + ROTATE_LEFT;
+const rotateLeftThrice = ROTATE_LEFT + ROTATE_LEFT + ROTATE_LEFT;
+const rotateLeftFourTimes = ROTATE_LEFT + ROTATE_LEFT + ROTATE_LEFT + ROTATE_LEFT;
 export default class MarsRover {
     coordinates = "0:0:N";
 
@@ -19,44 +23,57 @@ export default class MarsRover {
     execute(command: string) {
         const y = command.length;
 
-        if(command === rotateRight) {
-            return this.getOutputString(EAST);
+        let outputString = this.coordinates;
+        if(command.includes(ROTATE_RIGHT)) {
+            outputString = this.rotateRight(command, outputString);
+        }
+        if(command.includes(ROTATE_LEFT)){
+            outputString = this.rotatetLeft(command, outputString);
         }
 
-        
-        if(command === rotateRightTwice) {
-            return this.getOutputString(SOUTH);
+        if(command.includes("M")) {
+            outputString = `0:${y}:N`;
         }
 
-        
-        if(command === rotateRightThrice) {
-            return this.getOutputString(WEST);
+        return outputString;
+    }
+
+    private rotatetLeft(command: string, outputString: string) {
+        if (command === rotateLeft) {
+            outputString = this.getOutputString(WEST);
         }
 
-        
-        if(command === rotateRightFourTimes) {
-            return this.getOutputString(NORTH);
+        if (command === rotateLeftTwice) {
+            outputString = this.getOutputString(SOUTH);
         }
 
-        if(command === ROTATE_LEFT) {
-            return this.getOutputString(WEST);
+        if (command === rotateLeftThrice) {
+            outputString = this.getOutputString(EAST);
         }
 
-        if(command === ROTATE_LEFT + ROTATE_LEFT) {
-            return this.getOutputString(SOUTH);
+        if (command === rotateLeftFourTimes) {
+            outputString = this.getOutputString(NORTH);
+        }
+        return outputString;
+    }
+
+    private rotateRight(command: string, outputString: string) {
+        if (command === rotateRight) {
+            outputString = this.getOutputString(EAST);
         }
 
-        if(command === ROTATE_LEFT + ROTATE_LEFT + ROTATE_LEFT) {
-            return this.getOutputString(EAST);
+        if (command === rotateRightTwice) {
+            outputString = this.getOutputString(SOUTH);
         }
 
-        if(command === ROTATE_LEFT + ROTATE_LEFT + ROTATE_LEFT + ROTATE_LEFT) {
-            return this.getOutputString(NORTH);
+        if (command === rotateRightThrice) {
+            outputString = this.getOutputString(WEST);
         }
 
-        return `0:${y}:N`;
-
-        return this.coordinates;
+        if (command === rotateRightFourTimes) {
+            outputString = this.getOutputString(NORTH);
+        }
+        return outputString;
     }
 
     private getOutputString(direction: string) {
