@@ -5,6 +5,7 @@ const NORTH = "N";
 
 const ROTATE_RIGHT = "R";
 const ROTATE_LEFT = "L";
+
 export default class MarsRover {
     coordinates = "0:0:N";
 
@@ -39,6 +40,10 @@ export default class MarsRover {
 
         if(command === ROTATE_LEFT + ROTATE_LEFT + ROTATE_LEFT) {
             return this.x_and_y + EAST;
+        }
+
+        if(command === ROTATE_LEFT + ROTATE_LEFT + ROTATE_LEFT + ROTATE_LEFT) {
+            return this.x_and_y + NORTH;
         }
 
         return `0:${y}:N`;

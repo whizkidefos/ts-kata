@@ -99,5 +99,3 @@ describe("MarsRover", () => {
    })
 });
 
-test("bla bla", () => {})
-
