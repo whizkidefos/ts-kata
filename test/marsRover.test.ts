@@ -65,6 +65,15 @@ describe("MarsRover", () => {
 
       expect(coordinates).toEqual("0:0:N");
    });
+
+   it("should return the coordinate 0:0:W if given L", () => {
+      const marsRover = new MarsRover();
+
+      const coordinates = marsRover.execute("L");
+
+      expect(coordinates).toEqual("0:0:W");
+   });
+   
 });
 
 test("bla bla", () => {})
