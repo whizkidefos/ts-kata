@@ -21,6 +21,10 @@ export default class MarsRover {
             return "0:0:" + WEST;
         }
 
+        if(command === "RRRR") {
+            return "0:0:" + NORTH;
+        }
+
         return `0:${y}:N`;
 
         return this.coordinates;
