@@ -1,6 +1,8 @@
 const WEST = "W";
 const SOUTH = "S";
 const EAST = "E";
+const NORTH = "N";
+
 export default class MarsRover {
     coordinates:string = "0:0:N";
 
