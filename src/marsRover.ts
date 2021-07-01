@@ -4,25 +4,31 @@ const EAST = "E";
 const NORTH = "N";
 
 export default class MarsRover {
-    coordinates:string = "0:0:N";
+    coordinates = "0:0:N";
+
+    private readonly x_and_y = "0:0:";
 
     execute(command: string) {
-        let y = command.length;
+        const y = command.length;
 
         if(command === "R") {
-            return "0:0:" + EAST;
+            return this.x_and_y + EAST;
         }
 
         if(command === "RR") {
-            return "0:0:"+ SOUTH;
+            return this.x_and_y + SOUTH;
         }
 
         if(command === "RRR") {
-            return "0:0:" + WEST;
+            return this.x_and_y + WEST;
         }
 
         if(command === "RRRR") {
-            return "0:0:" + NORTH;
+            return this.x_and_y + NORTH;
+        }
+
+        if(command === "L") {
+            return this.x_and_y + WEST;
         }
 
         return `0:${y}:N`;
