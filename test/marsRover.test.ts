@@ -73,7 +73,14 @@ describe("MarsRover", () => {
 
       expect(coordinates).toEqual("0:0:W");
    });
-   
+
+   it("should return the coordinate 0:0:S if given LL", () => {
+      const marsRover = new MarsRover();
+
+      const coordinates = marsRover.execute("LL");
+
+      expect(coordinates).toEqual("0:0:S");
+   })
 });
 
 test("bla bla", () => {})

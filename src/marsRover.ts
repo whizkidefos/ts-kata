@@ -3,6 +3,8 @@ const SOUTH = "S";
 const EAST = "E";
 const NORTH = "N";
 
+const ROTATE_RIGHT = "R";
+const ROTATE_LEFT = "L";
 export default class MarsRover {
     coordinates = "0:0:N";
 
@@ -11,23 +13,23 @@ export default class MarsRover {
     execute(command: string) {
         const y = command.length;
 
-        if(command === "R") {
+        if(command === ROTATE_RIGHT) {
             return this.x_and_y + EAST;
         }
 
-        if(command === "RR") {
+        if(command === ROTATE_RIGHT+ROTATE_RIGHT) {
             return this.x_and_y + SOUTH;
         }
 
-        if(command === "RRR") {
+        if(command === ROTATE_RIGHT+ROTATE_RIGHT+ROTATE_RIGHT) {
             return this.x_and_y + WEST;
         }
 
-        if(command === "RRRR") {
+        if(command === ROTATE_RIGHT+ROTATE_RIGHT+ROTATE_RIGHT+ROTATE_RIGHT) {
             return this.x_and_y + NORTH;
         }
 
-        if(command === "L") {
+        if(command === ROTATE_LEFT) {
             return this.x_and_y + WEST;
         }
 
