@@ -33,6 +33,10 @@ export default class MarsRover {
             return this.x_and_y + WEST;
         }
 
+        if(command === ROTATE_LEFT + ROTATE_LEFT) {
+            return this.x_and_y + SOUTH;
+        }
+
         return `0:${y}:N`;
 
         return this.coordinates;
